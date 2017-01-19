@@ -1,0 +1,68 @@
+/*
+Theme Name: RC Basic Bootstrap
+Theme URI: https://github.com/rcadhikari/wp-basic-bootstrap
+Description: Basic Wordpress Theme using Bootstrap v3.3.7
+Author: RC Adhikari
+Author URI: https://github.com/rcadhikari
+Version: 1.0.0
+Text Domain: wp-basic-bootstrap
+License: MIT
+License URI: http://opensource.org/licenses/MIT
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-colors, custom-background.
+Licensed under the MIT license.
+.
+
+Description:
+    For mobile devices
+*/
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: @screen-xs-max) {
+
+    header {
+        #navbar {
+            .site-tagline {
+                color: @navbar-default-active;
+                padding: 30px 30px 15px 15px;
+                margin-bottom: 15px !important;
+                text-align: left;
+            }
+
+            .navbar-nav {
+                margin: -22.25px -15px;
+                background: @gray-lighter;
+            }
+
+            ul {
+                margin-bottom: 10.5px !important;
+
+                li a {
+                    text-transform: uppercase;
+                }
+                li.current_page_item a, li.active a {
+                    background-color: @gray-lighter-head;
+                    color: @navbar-default-active;
+                }
+            }
+        }
+
+    }
+
+    #main {
+
+        article {
+            padding-right: 35px;
+
+            header {
+                .article-head {
+                    padding: 15px;
+                }
+            }
+
+            section {
+
+            }
+        }
+    }
+
+}

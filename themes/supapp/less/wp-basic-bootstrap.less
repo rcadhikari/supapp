@@ -1,0 +1,243 @@
+/*
+Theme Name: RC Basic Bootstrap
+Theme URI: https://github.com/rcadhikari/wp-basic-bootstrap
+Description: Basic Wordpress Theme using Bootstrap v3.3.7
+Author: RC Adhikari
+Author URI: https://github.com/rcadhikari
+Version: 1.0.0
+Text Domain: wp-basic-bootstrap
+License: MIT
+License URI: http://opensource.org/licenses/MIT
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-colors, custom-background.
+Licensed under the MIT license.
+.
+
+Description:
+    This file defines a lot of style necessary to make Wordpress work
+    correctly.
+
+    It is not recommended to edit it unless you know exactly what you
+    are doing.
+*/
+
+html {
+    height: 100%;
+}
+
+body {
+    background-size: cover;
+    height: 100%;
+}
+
+.link-without-style() {
+    a {
+        color: inherit;
+        text-decoration: none;
+        &:hover, &:focus {
+            text-decoration: none;
+            color: @link-hover-color;
+        }
+    }
+}
+
+/*.navbar {
+    background-image: url("images/header.jpg");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+}*/
+
+header {
+    .link-without-style();
+    .meta {
+        .link-without-style();
+        margin-bottom: 20px;
+    }
+    .vertical_dotted_line
+    {
+        border-left: 1px dotted @navbar-default-vt-line;
+        height: 100px;
+    }
+
+    .navbar-brand > img {
+        margin-top: -50px;
+    }
+}
+
+.navbar {
+    min-height: @navbar-height !important;
+    margin-bottom: 40px;
+}
+
+header {
+    background-image: @header-background;
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+}
+
+#main {
+
+    article {
+        padding-right: 35px;
+
+        header {
+            /*display: inline-flex;
+            padding-bottom: 20px;*/
+
+            .featured-image {
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            div {
+                float: left;
+            }
+
+            .article-header a, .title {
+                color: @gray-lighter-post-title;
+                font-family: @font-family-post-title;
+                font-size: @font-size-post-title;
+                font-weight: bold;
+                line-height: (@font-size-post-title * 0.9);
+            }
+
+            .article-head {
+                padding: 0px;
+
+                .post-date {
+                    margin-top: 10px;
+                    background-color: @gray-lighter-post-date;
+                    width: 100%;
+                    .day {
+                        color: @gray-lighter-post-day;
+                        font-size: @font-size-post-day;
+                        font-weight: bold;
+                        padding-left: 5px;
+                    }
+                    .date {
+                        color: @body-base-color;
+                        font-size: @font-size-post-month-year;
+                        float: left;
+                        margin-top: (@font-size-post-month-year * 0.88);
+                        max-width: 25px;
+                        padding-left: 8px;
+                    }
+                }
+
+                .tags {
+                    padding-top: 10px;
+                    ul {
+                        padding: 0px;
+                        display: inline-flex;
+                        list-style: outside none none;
+                        color: @body-base-color;
+                        margin-bottom: 0px;
+
+                        li:not(:last-child):after {
+                            content: ', ';
+                        }
+                        li:not(:first-child) {
+                            padding-left: 3px;
+                        }
+                    }
+                    .tag {
+                        a:not(:last-child):after {
+                            content: ', ';
+                        }
+                        a {
+                            color: @font-color-active;
+                            text-transform: lowercase;
+                        }
+                    }
+                }
+            }
+        }
+
+        section {
+            float: left;
+            border-bottom: 1px dotted @navbar-default-vt-line;
+
+            padding: 20px 0px 30px 0px;
+            margin-bottom: 40px;
+
+            .clearfix();
+            img {
+                .img-responsive();
+                .img-thumbnail();
+
+                &.alignleft {
+                    .pull-left();
+                    margin-right: 10px;
+                }
+
+                &.alignright {
+                    .pull-right();
+                    margin-left: 10px;
+                }
+
+                &.aligncenter {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+
+            .moretag {
+                float: right;
+                color: @font-color-active;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+
+/* Larger devices than tablets */
+@media (min-width: @screen-sm-max) {
+
+    header {
+
+        #navbar {
+            float: right;
+            position: absolute;
+
+            margin-top: -20px;
+            margin-left: 13.45%;
+            margin-right: 14.3%;
+
+            div {
+                display: inline-block;
+
+                > div:not(:first-child) {
+                    min-height: @navbar-max-width;
+                }
+            }
+
+            .site-tagline {
+                color: @navbar-default-active;
+                max-width: 35%;
+                padding: 40px 15px 15px 0px;
+                text-align: left;
+            }
+
+            .main-nav {
+                border-left: 1px dotted @navbar-default-vt-line;
+                min-width: @navbar-max-width;
+                text-align: center;
+                padding-top: 15px;
+
+                .menu {
+                    text-align: center;
+
+                    li a {
+                        text-transform: uppercase;
+                    }
+                    li.current_page_item a, li.active a {
+                        background-color: @gray-lighter-head;
+                        color: @navbar-default-active;
+                    }
+                }
+            }
+        }
+    }
+
+}

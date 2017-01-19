@@ -1,0 +1,187 @@
+/*
+Theme Name: RC Basic Bootstrap
+Theme URI: https://github.com/rcadhikari/wp-basic-bootstrap
+Description: Basic Wordpress Theme using Bootstrap v3.3.7
+Author: RC Adhikari
+Author URI: https://github.com/rcadhikari
+Version: 1.0.0
+Text Domain: wp-basic-bootstrap
+License: MIT
+License URI: http://opensource.org/licenses/MIT
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-colors, custom-background.
+Licensed under the MIT license.
+.
+
+Description:
+    This file only contains customization of bootstrap's variables to
+    define a new look for base elements.
+
+    You can safely replace all it's content by any variable.less that
+    can be found on https://bootswatch.com .
+*/
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+@gray-base:              #000;
+@gray-darker:            lighten(@gray-base, 13.5%); // #222
+@gray-dark:              lighten(@gray-base, 20%);   // #333
+@gray:                   lighten(@gray-base, 33.5%); // #555
+@gray-light:             lighten(@gray-base, 60%);   // #999
+@gray-lighter:           lighten(@gray-base, 90%); // #eee
+@gray-lighter-head:      lighten(@gray-base, 94%); // #eee
+@gray-lighter-post-title: lighten(@gray-base, 45.6%); // #eee
+@gray-lighter-post-date:  @gray-lighter-head;
+@gray-lighter-post-day:   @gray-lighter-post-title;
+@gray-lighter-post-month-year: @gray-lighter-post-title;
+@body-base-color:         @gray-lighter-post-title;
+
+@brand-primary:         #2780E3;
+@brand-success:         #3FB618;
+@brand-info:            #9954BB;
+@brand-warning:         #FF7518;
+@brand-danger:          #FF0039;
+
+//== Navbar
+// Basics of a navbar
+@navbar-height:                    110px;
+@navbar-margin-bottom:             @line-height-computed;
+@navbar-border-radius:             @border-radius-base;
+@navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
+@navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
+@navbar-collapse-max-height:       340px;
+
+@navbar-default-active:            #930018;
+@navbar-default-color:             #6c6c6c;
+@navbar-default-bg:                @gray-lighter-head;
+@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+
+@navbar-default-vt-line:           @gray-light;
+@font-color-active:                @navbar-default-active;
+
+//== Typography
+/*@import url(http://fonts.googleapis.com/css?family=Ubuntu);*/
+@font-family-sans-serif:  "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-arial-mt:    'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-ubuntu: Ubuntu, sans-serif;
+
+@font-family-base:        @font-family-ubuntu;
+@font-family-post-title:  @font-family-arial-mt;
+
+@font-size-base:          15px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+@font-size-post-title:    ceil((@font-size-base * 2.2)); // ~33px
+@font-size-post-day:      ceil((@font-size-base * 3.46)); // ~52px
+@font-size-post-month-year: ceil((@font-size-base * 1.06)); // ~16px
+
+@navbar-max-width:518.264px; // calc(~'797.313px - 279.049px');
+
+@header-background: url("images/header-bg.jpg");
+
+body {
+  color: @body-base-color;
+  font-family: @font-family-base;
+}
+
+// Navs =======================================================================
+.navbar {
+
+  &-inverse {
+
+    .badge {
+      background-color: #fff;
+      color: @brand-primary;
+    }
+  }
+
+  position: relative;
+  height: @navbar-height !important;
+}
+
+.head {
+  color: @gray-lighter-post-title;
+}
+
+// Navs =======================================================================
+.nav-pills {
+
+  & > li > a {
+    border-radius: 0;
+  }
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.dropdown-menu {
+
+  & > li > a:hover,
+  & > li > a:focus {
+    background-image: none;
+  }
+}
+
+// Indicators =================================================================
+
+.close {
+  text-decoration: none;
+  text-shadow: none;
+  opacity: 0.4;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.alert {
+  border: none;
+
+  .alert-link {
+    text-decoration: underline;
+    color: #fff;
+  }
+}
+
+.label {
+  border-radius: 0;
+}
+
+// Progress bars ==============================================================
+
+.progress {
+  height: 8px;
+  .box-shadow(none);
+  .progress-bar {
+    font-size: 8px;
+    line-height: 8px;
+  }
+}
+
+// Containers =================================================================
+
+.panel {
+  &-heading,
+  &-footer {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  &-default {
+    .close {
+      color: @text-color;
+    }
+  }
+}

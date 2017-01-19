@@ -1,0 +1,84 @@
+/*
+Theme Name: RC Basic Bootstrap
+Theme URI: https://github.com/rcadhikari/wp-basic-bootstrap
+Description: Basic Wordpress Theme using Bootstrap v3.3.7
+Author: RC Adhikari
+Author URI: https://github.com/rcadhikari
+Version: 1.0.0
+Text Domain: wp-basic-bootstrap
+License: MIT
+License URI: http://opensource.org/licenses/MIT
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-colors, custom-background.
+Licensed under the MIT license.
+.
+
+Description:
+    For tablets devices
+*/
+
+/* Small devices (tablets, 768px or ipad) */
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+
+    header {
+
+        #navbar {
+            margin-left: 2%;
+            margin-right: 2%;
+
+            .site-tagline {
+                color: @navbar-default-active;
+                max-width: 38%;
+                padding: 40px 15px 15px 0px !important;
+                text-align: left;
+                margin-left: 0px !important;
+                background: transparent !important;
+                border-right: 1px dotted @navbar-default-vt-line;
+            }
+
+            .navbar-nav {
+                margin: -28.25px -15px;
+                background: @gray-lighter;
+            }
+
+            .main-nav {
+                border-left: 1px dotted @navbar-default-vt-line;
+                padding-left: 20px;
+                min-width: inherit;
+
+                .menu {
+                    margin-top: 25px;
+                }
+
+                ul {
+                    margin-bottom: 10.5px !important;
+
+                    li a {
+                        text-transform: uppercase;
+                        background-color: @gray-lighter-head;
+                    }
+                    li.current_page_item a, li.active a {
+                        color: @navbar-default-active;
+                    }
+                }
+            }
+        }
+    }
+
+    #main {
+
+        article {
+            padding-right: 35px;
+
+            header {
+                .article-head {
+                    padding: 15px;
+                }
+            }
+
+            section {
+
+            }
+        }
+    }
+
+}
